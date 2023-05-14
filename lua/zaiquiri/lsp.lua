@@ -1,7 +1,19 @@
-local lsp = require('lsp-zero')
+local lsp = require('lsp-zero').preset({})
 
-lsp.preset('recommended')
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
+
+lsp.format_mapping('gq', {
+  servers = {
+    ['lua_ls'] = {'lua'},
+    ['rust_analyzer'] = {'rust'},
+    ['quick_lint_js'] = {'ejs'},
+  }
+})
+
 lsp.setup()
+
 
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
