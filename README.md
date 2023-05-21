@@ -4,10 +4,10 @@ leader = space
 ### Better window navigation
 | Keymap | Description |
 | ----------- | ----------- |
-| <Ctrl>h | move to window on the left |
-| <Ctrl>l | move to window on the right |
-| <Ctrl>j | move to window below |
-| <Ctrl>k | move to window above |
+| Ctrl h | move to window on the left |
+| Ctrl l | move to window on the right |
+| Ctrl j | move to window below |
+| Ctrl k | move to window above |
 
 ### Opens explorer
 map("n", "<leader>e", vim.cmd.Ex)
@@ -127,7 +127,7 @@ vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 `gbac` - Toggle comment around a class (w/ LSP/treesitter support)
 
 # todos 
-- add nvimtree 
-- add bufferline 
+- format shortcuts in readme 
+- fix cmp/lsp-zero 
 - add gitsigns
 - add a formatter like null-ls
