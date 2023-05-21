@@ -11,4 +11,4 @@ require "zaiquiri.comment"
 require "zaiquiri.nvim-tree"
 require "zaiquiri.bufferline"
 require "zaiquiri.bufferline"
-vim.cmd('source ./lua/zaiquiri/mkdp.vim')
+vim.cmd('source ~/.config/nvim/lua/zaiquiri/mkdp.vim')
