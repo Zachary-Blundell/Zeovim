@@ -149,10 +149,11 @@ map("x", "<leader>p", [["_dP]])
 
 
 
-
 # todos 
 - fix cmp/lsp-zero 
+    - comfermations / tab / super tab
 - format shortcuts in readme 
 - fix live grep in Telescope
 - add gitsigns
+- add windwp/nvim-ts-autotag
 - add a formatter like null-ls
