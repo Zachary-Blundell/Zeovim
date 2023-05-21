@@ -1,18 +1,114 @@
-# My Remaps
-leader = space 
-## Normal mode
-### Better window navigation
-| Keymap | Description |
-| ----------- | ----------- |
-| Ctrl h | move to window on the left |
-| Ctrl l | move to window on the right |
-| Ctrl j | move to window below |
-| Ctrl k | move to window above |
+<h1 align="center"> Keymaps </h1>
 
-### Opens explorer
-map("n", "<leader>e", vim.cmd.Ex)
+<!-- # Idea -->
+<!-- ## plugin -->
+<!-- ### mode -->
+
+leader = space 
+
+### Sections
+
+- General
+- Editing
+- Navigation / Display
+- Search and Replace
+
+# General
+
+### Press jk fast to enter
+map("i", "jk", "<ESC>")
+
+# Editing
+### Move text up and down
+map("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
+map("n", "<A-k>", "<Esc>:m .-2<CR>==gi")
+
+## Comment
+
+| Keymap | Description | Mode |
+| ----------- | ----------- | ----------- |
+| gcc | Toggles the current line using linewise comment | Normal |
+| gbc | Toggles the current line using blockwise comment | Normal |
+| [count]gcc | Toggles the number of line given as a prefix-count using linewise | Normal |
+| [count]gbc | Toggles the number of line given as a prefix-count using blockwise | Normal |
+| gc[count]{motion} | (Op-pending) Toggles the region using linewise comment | Normal |
+| gb[count]{motion} | (Op-pending) Toggles the region using blockwise comment | Normal |
+| gc | Toggles the region using linewise comment | Visual |
+| gb | Toggles the region using blockwise comment | Visual |
+| **Extra mappings** |||
+| gco | Insert comment to the next line and enters INSERT mode | Normal |
+| gcO | Insert comment to the previous line and enters INSERT mode | Normal |
+| gcA | Insert comment to end of the current line and enters INSERT mode | Normal |
+
+### Examples
+#### Linewise
+```
+`gcw` - Toggle from the current cursor position to the next word
+`gc$` - Toggle from the current cursor position to the end of line
+`gc}` - Toggle until the next blank line
+`gc5j` - Toggle 5 lines after the current cursor position
+`gc8k` - Toggle 8 lines before the current cursor position
+`gcip` - Toggle inside of paragraph
+`gca}` - Toggle around curly brackets
+```
+#### Blockwise
+```
+`gb2}` - Toggle until the 2 next blank line
+`gbaf` - Toggle comment around a function (w/ LSP/treesitter support)
+`gbac` - Toggle comment around a class (w/ LSP/treesitter support)
+```
+
+# Navigation / Display
+
+## Remaps
+
+| Keymap | Description | Mode |
+| ----------- | ----------- | ----------- |
+| | **Better Window Navigation**  | |
+| Ctrl h | move to window on the left | Normal |
+| Ctrl l | move to window on the right | Normal |
+| Ctrl j | move to window below | Normal |
+| Ctrl k | move to window above | Normal |
+| | **Other** | |
+| Leader e | opens tree explorer | Normal |
+| | **Navigate buffers** | |
+| L | move to next buffer | Normal |
+| H | move to previous buffer | Normal |
+| | **Resize with arrows** | |
+| Up arrow | increase hight | Normal |
+| Down arrow | decrease hight | Normal |
+| Right arrow | increase width | Normal |
+| Left arrow | decrease width | Normal |
+
+# Telescope
+| Keymap | Description | Mode |
+| ----------- | ----------- | ----------- |
+| leader ff | Open fuzzy find menu | Normal |
+| Ctrl p> | Open find git files menu | Normal |
+| leader ps | Live grep files | Normal | 
+
+## Harpoon
+| Keymap | Description | Mode |
+| ----------- | ----------- | ----------- |
+| leader a | add file to Harpoon | Normal |
+| leader fh | open quick menu | Normal |
+| leader t | go to file 1 | Normal |
+| leader g | go to file 2 | Normal |
+| leader b | go to file 3 | Normal |
+| leader y | go to file 4 | Normal |
+| leader h | go to file 5 | Normal |
+| leader n | go to file 6 | Normal |
+
+# Search and Replace
+
 ### find and replace the word cursor is on 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+
+
+
+
+
 ### Makes current file exacutable 
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
@@ -25,23 +121,10 @@ map("n", "<C-u>", "<C-u>zz")  -- going half page up
 map("n", "n", "nzzzv")        -- moving from search terms 
 map("n", "N", "Nzzzv")
 
-### Resize with arrows
-map("n", "<C-Up>", ":resize -2<CR>")
-map("n", "<C-Down>", ":resize +2<CR>")
-map("n", "<C-Left>", ":vertical resize -2<CR>")
-map("n", "<C-Right>", ":vertical resize +2<CR>")
 
-### Navigate buffers
-map("n", "<S-l>", ":bnext<CR>")
-map("n", "<S-h>", ":bprevious<CR>")
 
-### Move text up and down
-map("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
-map("n", "<A-k>", "<Esc>:m .-2<CR>==gi")
 
 --- Insert ---
-### Press jk fast to enter
-map("i", "jk", "<ESC>")
 map("i", "<C-c>", "<Esc>")
 
 --- Visual ---
@@ -65,69 +148,11 @@ map("x", "<leader>p", [["_dP]])
 
 
 
-# Harpoon
-## Normal mode
-| Keymap | Description |
-| ----------- | ----------- |
-| <leader>a | add file to Harpoon |
-| <leader>fh | open quick menu |
-| <leader>t | go to file 1 |
-| <leader>g | go to file 2 |
-| <leader>b | go to file 3 |
-| <leader>y | go to file 4 |
-| <leader>h | go to file 5 |
-| <leader>n | go to file 6 |
 
-# Telescope
-## Normal mode
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") })
-end)
-vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
-
-# Comment
-
-## NORMAL mode
-
-`gcc` - Toggles the current line using linewise comment
-`gbc` - Toggles the current line using blockwise comment
-`[count]gcc` - Toggles the number of line given as a prefix-count using linewise
-`[count]gbc` - Toggles the number of line given as a prefix-count using blockwise
-`gc[count]{motion}` - (Op-pending) Toggles the region using linewise comment
-`gb[count]{motion}` - (Op-pending) Toggles the region using blockwise comment
-
-## VISUAL mode
-
-`gc` - Toggles the region using linewise comment
-`gb` - Toggles the region using blockwise comment
-## Extra mappings
-### NORMAL mode
-
-`gco` - Insert comment to the next line and enters INSERT mode
-`gcO` - Insert comment to the previous line and enters INSERT mode
-`gcA` - Insert comment to end of the current line and enters INSERT mode
-
-## Examplses 
-### Linewise
-
-`gcw` - Toggle from the current cursor position to the next word
-`gc$` - Toggle from the current cursor position to the end of line
-`gc}` - Toggle until the next blank line
-`gc5j` - Toggle 5 lines after the current cursor position
-`gc8k` - Toggle 8 lines before the current cursor position
-`gcip` - Toggle inside of paragraph
-`gca}` - Toggle around curly brackets
-
-### Blockwise
-
-`gb2}` - Toggle until the 2 next blank line
-`gbaf` - Toggle comment around a function (w/ LSP/treesitter support)
-`gbac` - Toggle comment around a class (w/ LSP/treesitter support)
 
 # todos 
-- format shortcuts in readme 
 - fix cmp/lsp-zero 
+- format shortcuts in readme 
+- fix live grep in Telescope
 - add gitsigns
 - add a formatter like null-ls
