@@ -215,6 +215,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   }
 }
 
