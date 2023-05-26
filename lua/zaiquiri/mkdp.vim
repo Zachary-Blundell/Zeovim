@@ -1,7 +1,17 @@
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
-let g:mkdp_auto_start = 1
+let g:mkdp_auto_start = 0
 
+" pass CLI options to the browser, like opening in a new window?
+  function OpenMarkdownPreview (url)
+    execute "silent ! firefox --new-window " . a:url
+  endfunction
+  let g:mkdp_browserfunc = 'OpenMarkdownPreview'
+
+" keymappings
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+nmap <C-p> <Plug>MarkdownPreviewToggle
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
 " default: 1
@@ -43,7 +53,7 @@ let g:mkdp_echo_preview_url = 0
 " a custom vim function name to open preview page
 " this function will receive url as param
 " default is empty
-let g:mkdp_browserfunc = ''
+" let g:mkdp_browserfunc = ''
 
 " options for markdown render
 " mkit: markdown-it options for render
