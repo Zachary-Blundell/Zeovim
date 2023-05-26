@@ -17,6 +17,7 @@ leader = space
 
 ### Press jk fast to enter
 map("i", "jk", "<ESC>")
+keymap("v", "jk", "<ESC>", opts)
 
 # Editing
 ### Move text up and down

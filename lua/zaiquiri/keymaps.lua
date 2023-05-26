@@ -8,8 +8,6 @@ local keymap = vim.api.nvim_set_keymap
 --Remap space as leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-keymap("n", "<leader>pv", ":Lex 30<cr>", opts)
 
 -- Modes
 --   normal_mode = "n",
@@ -46,6 +44,7 @@ keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("v", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode

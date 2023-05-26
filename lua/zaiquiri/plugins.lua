@@ -49,17 +49,32 @@ return packer.startup(function(use)
             require'alpha'.setup(require'alpha.themes.startify'.config)
         end
     } ]]
-    -- Startify dashboard
-    use 'mhinz/vim-startify'
 
-    -- Quality of life
+    --- Quality of life --- 
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- Easily comment stuff
     -- use 'JoosepAlviste/nvim-ts-context-commentstring' -- Context specific commenting for stuff for example with js and jsx
+    -- Markdown Preview
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
+
+    --- Visuals --- 
+    use 'mhinz/vim-startify' -- Startify dashboard
+    use 'vim-airline/vim-airline' -- Status line 
+    use 'vim-airline/vim-airline-themes' -- Themes for status line 
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", } -- Treesitter
     -- Colorschemes
     use "lunarvim/colorschemes" -- A bunch of colorschemes 
     use "lunarvim/darkplus.nvim"
+    use 'ajmwagar/vim-deus'
+
+    --- Navigation ---
+    use "nvim-telescope/telescope.nvim" -- Telescope
+    use "BurntSushi/ripgrep"      -- required for live_grep and grep_string
+    use("theprimeagen/harpoon") -- Harpoon
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'} -- Bufferline
+    use "nvim-tree/nvim-tree.lua" -- Nvim-tree
+    use "nvim-tree/nvim-web-devicons" -- adds the icons to the folders and files. also used in alot of other plugins
 
     -- Lsp-zero
     use {
@@ -85,27 +100,6 @@ return packer.startup(function(use)
             {'rafamadriz/friendly-snippets'}, -- a bunch of snippets to use
         }
     }
-
-    --- Navigation ---
-    -- Telescope
-    use "nvim-telescope/telescope.nvim"
-    use "BurntSushi/ripgrep"      -- required for live_grep and grep_string
-    -- Harpoon
-    use("theprimeagen/harpoon")
-    -- Bufferline
-    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
-    -- Nvim-tree
-    use "nvim-tree/nvim-tree.lua"
-    use "nvim-tree/nvim-web-devicons" -- adds the icons to the folders and files. also used in alot of other plugins
-
-    -- Treesitter
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-    }
-
-    -- Markdown Preview
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
