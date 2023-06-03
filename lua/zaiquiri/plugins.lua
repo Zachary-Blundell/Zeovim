@@ -57,6 +57,7 @@ return packer.startup(function(use)
     -- Markdown Preview
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
     use "christoomey/vim-tmux-navigator" -- adds tmux integration
+    use "norcalli/nvim-colorizer.lua"
 
     --- Visuals --- 
     use "mhinz/vim-startify" -- Startify dashboard
