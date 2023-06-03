@@ -43,67 +43,68 @@ return packer.startup(function(use)
 
     -- Alpha start dashboard
     --[[ use {
-        'goolord/alpha-nvim',
-        requires = { 'nvim-tree/nvim-web-devicons' },
+        "goolord/alpha-nvim",
+        requires = { "nvim-tree/nvim-web-devicons" },
         config = function ()
-            require'alpha'.setup(require'alpha.themes.startify'.config)
+            require"alpha".setup(require"alpha.themes.startify".config)
         end
     } ]]
 
     --- Quality of life --- 
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- Easily comment stuff
-    -- use 'JoosepAlviste/nvim-ts-context-commentstring' -- Context specific commenting for stuff for example with js and jsx
+    -- use "JoosepAlviste/nvim-ts-context-commentstring" -- Context specific commenting for stuff for example with js and jsx
     -- Markdown Preview
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 
     --- Visuals --- 
-    use 'mhinz/vim-startify' -- Startify dashboard
-    use 'vim-airline/vim-airline' -- Status line 
-    use 'vim-airline/vim-airline-themes' -- Themes for status line 
+    use "mhinz/vim-startify" -- Startify dashboard
+    use "vim-airline/vim-airline" -- Status line 
+    use "vim-airline/vim-airline-themes" -- Themes for status line 
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", } -- Treesitter
     -- Colorschemes
     use "lunarvim/colorschemes" -- A bunch of colorschemes 
     use "lunarvim/darkplus.nvim"
-    use 'ajmwagar/vim-deus'
+    use "ajmwagar/vim-deus"
+    use 'ghifarit53/tokyonight-vim'
 
     --- Navigation ---
     use "nvim-telescope/telescope.nvim" -- Telescope
     use "BurntSushi/ripgrep"      -- required for live_grep and grep_string
     use("theprimeagen/harpoon") -- Harpoon
-    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'} -- Bufferline
+    use {"akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons"} -- Bufferline
     use "nvim-tree/nvim-tree.lua" -- Nvim-tree
     use "nvim-tree/nvim-web-devicons" -- adds the icons to the folders and files. also used in alot of other plugins
 
     -- Lsp-zero
     use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v1.x",
         requires = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},    -- enable LSP
-            {'williamboman/mason.nvim'},  -- simple to use language server installer
-            {'williamboman/mason-lspconfig.nvim'},  -- language server settings 
+            {"neovim/nvim-lspconfig"},    -- enable LSP
+            {"williamboman/mason.nvim"},  -- simple to use language server installer
+            {"williamboman/mason-lspconfig.nvim"},  -- language server settings 
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},         -- The completion plugin
-            {'hrsh7th/cmp-buffer'},       -- buffer completions
-            {'hrsh7th/cmp-path'},         -- path completion
-            {'hrsh7th/cmp-cmdline'},      -- cmdline completions
-            {'saadparwaiz1/cmp_luasnip'}, -- snippet completions
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
+            {"hrsh7th/nvim-cmp"},         -- The completion plugin
+            {"hrsh7th/cmp-buffer"},       -- buffer completions
+            {"hrsh7th/cmp-path"},         -- path completion
+            {"hrsh7th/cmp-cmdline"},      -- cmdline completions
+            {"saadparwaiz1/cmp_luasnip"}, -- snippet completions
+            {"hrsh7th/cmp-nvim-lsp"},
+            {"hrsh7th/cmp-nvim-lua"},
 
             -- Snippets
-            {'L3MON4D3/LuaSnip'},             --snippet engine
-            {'rafamadriz/friendly-snippets'}, -- a bunch of snippets to use
+            {"L3MON4D3/LuaSnip"},             --snippet engine
+            {"rafamadriz/friendly-snippets"}, -- a bunch of snippets to use
         }
     }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
-        require('packer').sync()
+        require("packer").sync()
     end
 end)

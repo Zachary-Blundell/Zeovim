@@ -13,4 +13,5 @@ require "zaiquiri.bufferline"
 -- require "zaiquiri.alpha"
 vim.cmd('source ~/.config/nvim/lua/zaiquiri/mkdp.vim')
 vim.cmd('source ~/.config/nvim/lua/zaiquiri/start-screen.vim')
-vim.cmd('source ~/.config/nvim/lua/zaiquiri/airline.vim')
+-- vim.cmd('source ~/.config/nvim/lua/zaiquiri/airline.vim')
+require "zaiquiri.airline"

@@ -216,6 +216,11 @@ _G.packer_plugins = {
     path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tokyonight-vim"] = {
+    loaded = true,
+    path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/tokyonight-vim",
+    url = "https://github.com/ghifarit53/tokyonight-vim"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/vim-airline",
