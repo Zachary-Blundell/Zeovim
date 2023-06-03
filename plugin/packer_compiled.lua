@@ -221,6 +221,11 @@ _G.packer_plugins = {
     path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/tokyonight-vim",
     url = "https://github.com/ghifarit53/tokyonight-vim"
   },
+  vim = {
+    loaded = true,
+    path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/vim",
+    url = "https://github.com/catppuccin/vim"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/vim-airline",
@@ -240,6 +245,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/vim-startify",
     url = "https://github.com/mhinz/vim-startify"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
   }
 }
 

@@ -56,7 +56,7 @@ return packer.startup(function(use)
     -- use "JoosepAlviste/nvim-ts-context-commentstring" -- Context specific commenting for stuff for example with js and jsx
     -- Markdown Preview
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-
+    use "christoomey/vim-tmux-navigator" -- adds tmux integration
 
     --- Visuals --- 
     use "mhinz/vim-startify" -- Startify dashboard
@@ -67,7 +67,8 @@ return packer.startup(function(use)
     use "lunarvim/colorschemes" -- A bunch of colorschemes 
     use "lunarvim/darkplus.nvim"
     use "ajmwagar/vim-deus"
-    use 'ghifarit53/tokyonight-vim'
+    use "ghifarit53/tokyonight-vim"
+    use "catppuccin/vim" -- , { 'as': 'catppuccin' }
 
     --- Navigation ---
     use "nvim-telescope/telescope.nvim" -- Telescope

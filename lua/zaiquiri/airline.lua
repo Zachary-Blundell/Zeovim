@@ -42,7 +42,7 @@ vim.g.airline_left_sep = ''
 -- <
 -- " themes are automatically selected based on the matching colorscheme. this
 --   can be overridden by defining a value. >
-vim.g.airline_theme='tokyonight'
+vim.g.airline_theme='catppuccin_mocha'
 -- vim.g.airline_theme='zeo'
 -- <
 --   Note: Only the dark theme is distributed with vim-airline. For more themes,

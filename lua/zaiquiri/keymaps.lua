@@ -49,7 +49,7 @@ keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
-keymap("v", "jk", "<ESC>", opts)
+keymap("v", "<C-jk>", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
