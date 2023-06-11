@@ -64,12 +64,13 @@ return packer.startup(function(use)
     use "vim-airline/vim-airline" -- Status line 
     use "vim-airline/vim-airline-themes" -- Themes for status line 
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", } -- Treesitter
+    use "nvim-tree/nvim-web-devicons" -- adds the icons to the folders and files. also used in alot of other plugins
     -- Colorschemes
     use "lunarvim/colorschemes" -- A bunch of colorschemes 
     use "lunarvim/darkplus.nvim"
     use "ajmwagar/vim-deus"
     use "ghifarit53/tokyonight-vim"
-    use "catppuccin/vim" -- , { 'as': 'catppuccin' }
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     --- Navigation ---
     use "nvim-telescope/telescope.nvim" -- Telescope
@@ -77,7 +78,6 @@ return packer.startup(function(use)
     use("theprimeagen/harpoon") -- Harpoon
     use {"akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons"} -- Bufferline
     use "nvim-tree/nvim-tree.lua" -- Nvim-tree
-    use "nvim-tree/nvim-web-devicons" -- adds the icons to the folders and files. also used in alot of other plugins
 
     -- Lsp-zero
     use {

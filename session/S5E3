@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~
+cd ~/code/oclock/5season/E03/S05-oquizz-RED
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,16 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +12 code/oclock/5season/E02/S05-oquizz-RED/app/dataMapper/dataMapper.js
-badd +1 code/oclock/5season/E02/S05-oquizz-RED/index.js
-badd +4 code/oclock/5season/E02/S05-oquizz-RED/app/dataMapper/connexion.js
-badd +10 code/oclock/5season/E02/S05-oquizz-RED/app/dataMapper/test.js
-badd +4 code/oclock/5season/E02/S05-oquizz-RED/.env
+badd +58 app/dataMapper/dataMapper.js
 argglobal
 %argdel
-edit code/oclock/5season/E02/S05-oquizz-RED/app/dataMapper/dataMapper.js
+edit app/dataMapper/dataMapper.js
 argglobal
-balt code/oclock/5season/E02/S05-oquizz-RED/index.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -33,13 +28,13 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 22) / 45)
+let s:l = 58 - ((35 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9
+keepjumps 58
 normal! 02|
-lcd ~/code/oclock/5season/E02/S05-oquizz-RED
+lcd ~/code/oclock/5season/E03/S05-oquizz-RED
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

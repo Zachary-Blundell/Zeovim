@@ -3,6 +3,7 @@
 
     let g:startify_bookmarks = [ 
                 \ {'c': '~/.config/nvim/'}, 
+                \ {'n': '~/code/notebook/'}, 
                 \ {'i': '~/.bashrc'}, 
                 \ '~/code',
                 \ ]

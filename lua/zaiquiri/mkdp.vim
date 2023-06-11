@@ -1,6 +1,6 @@
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
-let g:mkdp_auto_start = 1
+" let g:mkdp_auto_start = 1
 
 " pass CLI options to the browser, like opening in a new window?
   function OpenMarkdownPreview (url)
@@ -11,7 +11,7 @@ let g:mkdp_auto_start = 1
 " keymappings
 " nmap <C-s> <Plug>MarkdownPreview
 " nmap <M-s> <Plug>MarkdownPreviewStop
-" nmap <C-p> <Plug>MarkdownPreviewToggle
+nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer

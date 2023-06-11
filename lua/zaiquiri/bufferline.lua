@@ -1,5 +1,20 @@
+local mocha = require("catppuccin.palettes").get_palette "mocha"
 local bufferline = require('bufferline')
     bufferline.setup {
+        highlights = require("catppuccin.groups.integrations.bufferline").get {
+            styles = { "italic", "bold" },
+            custom = {
+                all = {
+                    fill = { bg = "#000000" },
+                },
+                mocha = {
+                    background = { fg = mocha.text },
+                },
+                latte = {
+                    background = { fg = "#000000" },
+                },
+            },
+        },
         options = {
             mode = "buffers", -- set to "tabs" to only show tabpages instead
             style_preset = bufferline.style_preset.default, -- or bufferline.style_preset.minimal,

@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -225,11 +230,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/tokyonight-vim",
     url = "https://github.com/ghifarit53/tokyonight-vim"
-  },
-  vim = {
-    loaded = true,
-    path = "/home/zaiquiri/.local/share/nvim/site/pack/packer/start/vim",
-    url = "https://github.com/catppuccin/vim"
   },
   ["vim-airline"] = {
     loaded = true,

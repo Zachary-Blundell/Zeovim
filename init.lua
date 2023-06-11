@@ -1,6 +1,7 @@
 require "zaiquiri.options"
 require "zaiquiri.remap"
-require "zaiquiri.colorscheme"
+-- require "zaiquiri.colorscheme"
+require "zaiquiri.catppuccino"
 require "zaiquiri.plugins"
 require "zaiquiri.harpoon"
 require "zaiquiri.treesitter"
